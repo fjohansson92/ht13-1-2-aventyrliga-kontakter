@@ -7,7 +7,7 @@ using AdventurousContacts.Models.DataModels;
 
 namespace AdventurousContacts.Models.Repository
 {
-    public class Repository
+    public class Repository : IRepository
     {
         private bool _disposed = false;
 
@@ -54,7 +54,7 @@ namespace AdventurousContacts.Models.Repository
 
         public List<Contact> GetLastContacts(int count)
         {
-            return _entites.Contacts.Take(count).ToList();
+            return _entites.Contacts.AsEnumerable().Reverse().Take(count).ToList();
         }
 
         public void Save()
