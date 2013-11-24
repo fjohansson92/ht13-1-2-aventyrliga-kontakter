@@ -83,6 +83,25 @@
                 <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
               </MappingFragment>
             </EntityTypeMapping>
+            <EntityTypeMapping TypeName="AdventurousContacts.Models.DataModels.Contact">
+              <ModificationFunctionMapping>
+                <InsertFunction FunctionName="AdventurousContacts.Models.DataModels.Store.uspAddContact_SELECT">
+                  <ScalarProperty Name="EmailAddress" ParameterName="EmailAddress" />
+                  <ScalarProperty Name="LastName" ParameterName="LastName" />
+                  <ScalarProperty Name="FirstName" ParameterName="FirstName" />
+                  <ResultBinding Name="ContactID" ColumnName="NewContactId" />
+                </InsertFunction>
+                <UpdateFunction FunctionName="AdventurousContacts.Models.DataModels.Store.uspUpdateContact">
+                  <ScalarProperty Name="EmailAddress" ParameterName="EmailAddress" Version="Current" />
+                  <ScalarProperty Name="LastName" ParameterName="LastName" Version="Current" />
+                  <ScalarProperty Name="FirstName" ParameterName="FirstName" Version="Current" />
+                  <ScalarProperty Name="ContactID" ParameterName="ContactID" Version="Current" />
+                </UpdateFunction>
+                <DeleteFunction FunctionName="AdventurousContacts.Models.DataModels.Store.uspRemoveContact">
+                  <ScalarProperty Name="ContactID" ParameterName="ContactID" />
+                </DeleteFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
