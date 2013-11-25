@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using AdventurousContacts.Models;
@@ -126,6 +128,19 @@ namespace AdventurousContacts.Controllers
             }
             
             return View("Delete", contact);
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            StringBuilder errorMessage = new StringBuilder();
+            errorMessage.AppendLine(DateTime.Now.ToString());
+            errorMessage.AppendLine(filterContext.Exception.ToString());
+            errorMessage.AppendLine("=================================================================================================================================================");
+
+            FileStream fileStream = new FileStream(Server.MapPath("App_Data/LogFile.txt"), FileMode.Append, FileAccess.Write);
+            StreamWriter streamWriter = new StreamWriter(fileStream);
+            streamWriter.Write(errorMessage.ToString());
+            streamWriter.Close();
         }
     }
 }

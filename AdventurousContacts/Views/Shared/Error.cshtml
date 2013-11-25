@@ -1,17 +1,14 @@
-﻿@{
-    Layout = null;
+﻿@model AdventurousContacts.ViewModels.ErrorViewModel
+
+@{
+    ViewBag.Title = @Model.Title;
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+<h2>Error</h2>
+
+<p>
+    @Model.Message
+</p>
+<p>
+    @Html.ActionLink("Back to contacts", "Index")
+</p>
