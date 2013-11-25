@@ -1,0 +1,20 @@
+﻿@model AdventurousContacts.Models.Contact
+
+@{
+    ViewBag.Title = "Delete Contact";
+}
+
+<h2>Delete Contact</h2>
+
+<p>Are you user you want to delete <strong>@Model.FirstName @Model.LastName (@Model.EmailAddress)</strong></p>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary("Delete was unsuccessful")
+    <p>
+        <input type="submit" value="Delete" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Back to contacts", "Index")
+</p>

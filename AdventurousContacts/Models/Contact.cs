@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using AdventurousContacts.Resources;
 
 namespace AdventurousContacts.Models
 {
@@ -11,9 +12,19 @@ namespace AdventurousContacts.Models
     {
         public class Contact_Metadata
         {
-            //TODO: Add validation
-            public string EmailAdress { get; set; }
+            [Required]
+            [EmailAddress]
+            [Display(Name = "EmailName", ResourceType = typeof(Resources.Strings))]
+            public string EmailAddress { get; set; }
+
+            [Required]
+            [StringLength(50)]
+            [Display(Name = "FirstName", ResourceType = typeof(Resources.Strings))]
             public string FirstName { get; set; }
+
+            [Required]
+            [StringLength(50)]
+            [Display(Name = "LastName", ResourceType = typeof(Resources.Strings))]
             public string LastName { get; set; }
         }
     }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AdventurousContacts.Models;
 using AdventurousContacts.Models.Repository;
+using AdventurousContacts.ViewModels;
 
 namespace AdventurousContacts.Controllers
 {
@@ -43,10 +44,18 @@ namespace AdventurousContacts.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repository.Add(contact);
-                _repository.Save();
+                try
+                {
+                    _repository.Add(contact);
+                    _repository.Save();
 
-                return RedirectToAction("Index");
+                    var model = new SuccessViewModel(contact);
+                    return View("Success", model);
+                }
+                catch(Exception exception)
+                {
+                    ModelState.AddModelError(String.Empty, exception.InnerException.Message);
+                }
             }
             return View("Create", contact);
         }
@@ -73,7 +82,8 @@ namespace AdventurousContacts.Controllers
                     _repository.Update(contact);
                     _repository.Save();
 
-                    return View("Success", contact);
+                    var model = new SuccessViewModel(contact);
+                    return View("Success", model);
                 }
             }
             catch (Exception)
@@ -107,12 +117,12 @@ namespace AdventurousContacts.Controllers
                 _repository.Delete(contact);
                 _repository.Save();
 
-                return View("Success", contact);
+                var model = new SuccessViewModel(contact);
+                return View("Success", model);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                ModelState.AddModelError(String.Empty,
-                    "Error Message");
+                ModelState.AddModelError(String.Empty, exception.GetBaseException().Message);
             }
             
             return View("Delete", contact);
