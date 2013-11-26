@@ -7,7 +7,10 @@ namespace AdventurousContacts.ViewModels
 {
     public class ErrorViewModel
     {
+        // Title error text
         private string _title;
+
+        // Error text message
         private string _message;
 
         public string Title

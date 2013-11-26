@@ -1,8 +1,10 @@
 ﻿@model AdventurousContacts.Models.Contact
+@using AdventurousContacts.Resources
+@* Form to create a contact *@
 
 @using (Html.BeginForm()) {
    
-    @Html.ValidationSummary(true, "Create was unsuccessful. Please correct any errors and try again.")
+    @Html.ValidationSummary(true, Strings.CreateFailedSummary)
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.ContactID)
 
@@ -35,16 +37,17 @@
                 value=
                 @if (Object.ReferenceEquals(Model, null))
                 {
-                    @:"Save"
+                    @:"Create"
                 }
                 else
                 {
-                    @:"Edit"
+                    @:"Save"
                 }
                 
              />
         </p>
 }
 <div>
-    @Html.ActionLink("Back to contacts", "Index")
+    @Html.ActionLink(Strings.StartPageLink, "Index")
 </div>
+

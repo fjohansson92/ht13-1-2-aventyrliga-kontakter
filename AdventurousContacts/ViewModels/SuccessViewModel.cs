@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using AdventurousContacts.Models;
+using AdventurousContacts.Resources;
 
 namespace AdventurousContacts.ViewModels
 {
     public class SuccessViewModel
     {
+        // Saved contact
         public Contact _contact;
 
         public SuccessViewModel(Contact contact)
@@ -15,30 +17,32 @@ namespace AdventurousContacts.ViewModels
             _contact = contact;
         }
 
+        // Returns contact information
         public string ContactInfo
         {
             get
             {
-                return String.Format("{0} {1} ({2})", _contact.FirstName, _contact.LastName, _contact.EmailAddress);
+                return String.Format(Strings.ContactFormation, _contact.FirstName, _contact.LastName, _contact.EmailAddress);
             }
         }
 
+        // Returns success message.
         public string GetSuccessMessage(object p)
         {
             string message = "";
             try
             {
-                if (p.Equals("Create"))
+                if (p.Equals(Strings.Create))
                 {
-                    message = " was successfully created.";
+                    message = Strings.CreateSuccess;
                 }
-                else if (p.Equals("Delete"))
+                else if (p.Equals(Strings.Delete))
                 {
-                    message = " was successfully deleted.";
+                    message = Strings.DeleteSuccess;
                 }
                 else
                 {
-                    message = " was successfully saved.";
+                    message = Strings.SavedSuccess;
                 }
             }
             catch (Exception) {}

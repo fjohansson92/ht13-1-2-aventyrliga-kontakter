@@ -4,22 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AdventurousContacts.ViewModels;
+using AdventurousContacts.Resources;
 
 namespace AdventurousContacts.Controllers
 {
     public class ErrorController : Controller
     {
-
+        // Present error page on unhandle exceptions.
         public ActionResult Index()
         {
-            ErrorViewModel model = new ErrorViewModel("Error", "Sorry, an error occurred while processing your request.");
+            ErrorViewModel model = new ErrorViewModel(Strings.ErrorTitle, Strings.UnexpectedError);
 
             return View("Error", model);
         }
 
+        // Presents error page on page not found errors.
         public ActionResult NotFound()
         {
-            ErrorViewModel model = new ErrorViewModel("Error 404", "Ooops! Server returned a 404 (page not found)! In English it means the page, address, url you are looking for has moved without leaving a forwarding address!");
+            ErrorViewModel model = new ErrorViewModel(Strings.ErrorTitle, Strings.PageNotFoundError);
 
             return View("Error", model);
         }

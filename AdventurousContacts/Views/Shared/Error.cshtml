@@ -1,14 +1,18 @@
 ﻿@model AdventurousContacts.ViewModels.ErrorViewModel
+@using AdventurousContacts.Resources;
+@* Error page *@
 
 @{
     ViewBag.Title = @Model.Title;
 }
 
-<h2>Error</h2>
+<h2>
+    @Model.Title
+</h2>
 
 <p>
     @Model.Message
 </p>
 <p>
-    @Html.ActionLink("Back to contacts", "Index")
+    @Html.ActionLink(Strings.StartPageLink, "Index", "Contact")
 </p>

@@ -1,15 +1,19 @@
 ﻿@model AdventurousContacts.ViewModels.SuccessViewModel
+@using AdventurousContacts.Resources;
+@* Success page *@
 
 @{
-    ViewBag.Title = "Success";
+    ViewBag.Title = Strings.Success;
 }
 
-<h2>Success</h2>
+<h2>
+    @Strings.Success
+</h2>
 
 <p>  
     <strong>@Model.ContactInfo</strong>
     @Model.GetSuccessMessage(@ViewContext.Controller.ValueProvider.GetValue("action").RawValue)
 </p>
 <p>
-    @Html.ActionLink("Back to contacts", "Index")
+    @Html.ActionLink(Strings.StartPageLink, "Index")
 </p>

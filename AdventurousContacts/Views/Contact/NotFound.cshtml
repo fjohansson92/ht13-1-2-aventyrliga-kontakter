@@ -1,12 +1,17 @@
-﻿@{
-    ViewBag.Title = "Contact Not Found";
+﻿@using AdventurousContacts.Resources
+@* Error page for when contact not found *@
+
+@{
+    ViewBag.Title = Strings.ContactNotFound;
 }
 
-<h2>Contact Not Found</h2>
+<h2>
+    @Strings.ContactNotFound
+</h2>
 
 <p>
-    Sorry - but the contact you requested dosen't exist or was deleted.
+    @Strings.DetailedContactNotFound
 </p>
 <p>
-    @Html.ActionLink("Back to contacts", "Index")
+    @Html.ActionLink(Strings.StartPageLink, "Index")
 </p>

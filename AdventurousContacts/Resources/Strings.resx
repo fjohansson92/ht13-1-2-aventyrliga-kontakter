@@ -117,13 +117,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContactFormation" xml:space="preserve">
+    <value>{0} {1} ({2})</value>
+  </data>
+  <data name="ContactNotFound" xml:space="preserve">
+    <value>Contact Not Found</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Adventurous Contacts</value>
+  </data>
+  <data name="Course" xml:space="preserve">
+    <value>ASP NET MVC (1DV409)</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateFailedSummary" xml:space="preserve">
+    <value>Create was unsuccessful. Please correct any errors and try again.</value>
+  </data>
+  <data name="CreateNewContact" xml:space="preserve">
+    <value>Create New Contact</value>
+  </data>
+  <data name="CreateSuccess" xml:space="preserve">
+    <value> was successfully created.</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Are you user you want to delete </value>
+  </data>
+  <data name="DeleteContact" xml:space="preserve">
+    <value>Delete Contact</value>
+  </data>
+  <data name="DeleteFailed" xml:space="preserve">
+    <value>Delete was unsuccessful</value>
+  </data>
+  <data name="DeleteSuccess" xml:space="preserve">
+    <value> was successfully deleted.</value>
+  </data>
+  <data name="DetailedContactNotFound" xml:space="preserve">
+    <value>Sorry - but the contact you requested dosen't exist or was deleted.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditContact" xml:space="preserve">
+    <value>Edit Contact</value>
+  </data>
   <data name="EmailName" xml:space="preserve">
     <value>E-mail address</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="FirstName" xml:space="preserve">
     <value>First name</value>
   </data>
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
+  </data>
+  <data name="LogDivider" xml:space="preserve">
+    <value>=================================================================================================================================================</value>
+  </data>
+  <data name="NewContact" xml:space="preserve">
+    <value>Create new contact</value>
+  </data>
+  <data name="PageNotFoundError" xml:space="preserve">
+    <value>Ooops! Server returned a 404 (page not found)! In English it means the page, address, url you are looking for has moved without leaving a forwarding address!</value>
+  </data>
+  <data name="PageNotFoundTitle" xml:space="preserve">
+    <value>Error 404</value>
+  </data>
+  <data name="Problem" xml:space="preserve">
+    <value>Laborationsuppgift 2</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SavedSuccess" xml:space="preserve">
+    <value> was successfully saved.</value>
+  </data>
+  <data name="School" xml:space="preserve">
+    <value>Linnéuniversitetet</value>
+  </data>
+  <data name="StartPageLink" xml:space="preserve">
+    <value>Back to contacts</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>Steg 1</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
   </data>
 </root>

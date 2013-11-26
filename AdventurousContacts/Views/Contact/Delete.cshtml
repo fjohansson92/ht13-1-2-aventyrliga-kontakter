@@ -1,20 +1,27 @@
 ﻿@model AdventurousContacts.Models.Contact
+@using AdventurousContacts.Resources
+@* Confirmation form for deleting a contact *@
 
 @{
-    ViewBag.Title = "Delete Contact";
+    ViewBag.Title = Strings.DeleteContact;
 }
 
-<h2>Delete Contact</h2>
-
-<p>Are you user you want to delete <strong>@Model.FirstName @Model.LastName (@Model.EmailAddress)</strong></p>
+<h2>
+    @Strings.DeleteContact
+</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken();
-    @Html.ValidationSummary("Delete was unsuccessful")
+    @Html.ValidationSummary(Strings.DeleteFailed)
     <p>
+        @Strings.DeleteConfirmation
+        <strong>@Model.FirstName @Model.LastName (@Model.EmailAddress)?</strong>
+    </p>
+    
+     <p>
         <input type="submit" value="Delete" />
     </p>
 }
 <p>
-    @Html.ActionLink("Back to contacts", "Index")
+    @Html.ActionLink(Strings.StartPageLink, "Index")
 </p>

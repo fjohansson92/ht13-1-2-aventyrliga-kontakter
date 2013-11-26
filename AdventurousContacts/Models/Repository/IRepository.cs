@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventurousContacts.Models.Repository
 {
+    // Defines methods needed for CRUD-functionality
     public interface IRepository : IDisposable
     {
         void Add(Contact contact);

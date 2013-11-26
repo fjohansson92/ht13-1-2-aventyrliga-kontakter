@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Resource = AdventurousContacts.Resources.Strings
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,7 +9,24 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody()
+    <div class="content">
+        <div class="header">
+            <ul>
+                <li>@Resource.Course</li>
+                <li>→</li>
+                <li>@Resource.Step</li>
+                <li>→</li>
+                <li>@Resource.Problem</li>
+            </ul>
+            <h1>@Resource.ContactTitle</h1>
+        </div>
+        <div class="renderd">
+            @RenderBody()
+        </div>
+        <div class="footer">
+            <p>@Resource.School</p>
+        </div>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
